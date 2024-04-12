@@ -5,9 +5,10 @@ import HeaderSection from "./Header"
 import { ArrowUpRightIcon, MapPinIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBehance, faCss3Alt, faDiscord, faFigma, faGithub, faHtml5, faJava, faLinkedin, faLinkedinIn, faReact, faXTwitter } from "@fortawesome/free-brands-svg-icons"
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { faCss3 } from "@fortawesome/free-brands-svg-icons/faCss3"
 import { faSquareJs } from "@fortawesome/free-brands-svg-icons/faSquareJs"
+import Link from "next/link"
 
 interface HeroProps {
 
@@ -15,13 +16,13 @@ interface HeroProps {
 
 const HeroSection: React.FC<HeroProps> = ({ }) => {
     const t = useTranslations('HeroSection');
-   
+    const locale = useLocale();
 
     return (
 
         <div className=" grid grid-rows-2 gap-6 h-full ">
             <div className="grid grid-cols-2 gap-6">
-                <div className="grid grid-cols-11 bg-white rounded-xl  p-6 hover:shadow-lg cursor-pointer dark:bg-darkgray" >
+                <Link href={`/${locale}/about`} className="grid grid-cols-11 bg-white rounded-xl  p-6 hover:shadow-lg cursor-pointer dark:bg-darkgray" >
                     <div className="bg-whitegray  rounded-lg  col-span-4 dark:bg-gray">
 
                     </div>
@@ -51,9 +52,9 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
 
                         </div>
                     </div>
-                </div>
+                </Link>
                 <div className="grid grid-row-3 gap-6   ">
-                    <div className="flex-col flex justify-between bg-white rounded-lg row-span-3 p-6 hover:shadow-lg cursor-pointer dark:bg-darkgray">
+                    <Link href={`/${locale}/skills`} className="flex-col flex justify-between bg-white rounded-lg row-span-3 p-6 hover:shadow-lg cursor-pointer dark:bg-darkgray">
                         <div className="w-full flex justify-between ">
                             <div className="text-2xl font-bold text-black dark:text-whitebg">
                                 {t('myskills')}
@@ -92,7 +93,7 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
                             <FontAwesomeIcon icon={faJava} />
                             </div>
                         </div>
-                    </div>
+                    </Link>
                     <div className="grid grid-cols-3 gap-6 ">
                         <div className="bg-white rounded-lg flex-col flex items-center justify-center py-1 dark:bg-darkgray">
                             <div className="text-primary font-bold text-2xl">
@@ -126,7 +127,7 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
                 </div>
             </div>
             <div className="grid grid-cols-5 gap-6 ">
-                <div className="col-span-3 flex-col flex justify-between bg-white rounded-lg hover:shadow-lg cursor-pointer p-6 dark:bg-darkgray">
+                <Link href={`/${locale}/projects`} className="col-span-3 flex-col flex justify-between bg-white rounded-lg hover:shadow-lg cursor-pointer p-6 dark:bg-darkgray">
                     <div className="flex justify-between">
                         <div className="text-2xl font-bold text-black dark:text-whitebg">
                             {t('myprojects')}
@@ -147,7 +148,7 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
                     <div>
 
                     </div>
-                </div>
+                </Link>
                 <div className="col-span-2 grid grid-row-3 gap-6 ">
                     <div className="row-span-1 bg-white rounded-lg   flex justify-between items-center px-6 py-4 dark:bg-darkgray">
                         <div className="text-2xl font-bold text-black dark:text-whitebg">

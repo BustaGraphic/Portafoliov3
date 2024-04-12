@@ -12,8 +12,38 @@ export default function Page() {
         <div className="mx-auto  px-24 h-4/5 max-w-[120rem] pb-12 ">
 
             <div className=" grid grid-rows-2 gap-6 h-full ">
-                <div>
+                <div className="flex  space-x-6">
+                    <div className="bg-white rounded-lg  aspect-square p-6 dark:bg-darkgray">
+                        <div className="bg-whitegray aspect-square rounded-md dark:bg-gray">
 
+                        </div>
+                    </div>
+                    <div className="grid grid-rows-3 gap-6 w-full">
+                        <div className="row-span-1  flex justify-between items-end px-6">
+
+                            <div className="text-5xl font-bold text-black dark:text-whitebg">
+                                BustaLover
+                            </div>
+                            <div className="  flex justify-end items-center text-whitegray space-x-1 dark:text-gray ">
+                                <div>
+                                    Barcelona, <span className="font-semibold">                    {t('country')}
+                                    </span>
+                                </div>
+                                <MapPinIcon className=" text-primary w-4 h-4 " />
+
+                            </div>
+                        </div>
+                        <div className="row-span-2  bg-white rounded-lg text-primary p-6 space-y-2 dark:bg-darkgray">
+                            <div>
+                                {t('description')}
+
+                            </div>
+                            <div className="text-sm text-whitegray dark:text-gray">
+                                {t('descriptiontext')}
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <div className="grid grid-cols-5 gap-6 ">
                     <div className="col-span-3 flex-col flex justify-between bg-white rounded-lg hover:shadow-lg cursor-pointer p-6 dark:bg-darkgray">
@@ -22,7 +52,7 @@ export default function Page() {
                                 {t('experience')}
 
                             </div>
-                            
+
                         </div>
                         <div>
 

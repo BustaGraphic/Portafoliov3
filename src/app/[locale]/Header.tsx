@@ -22,7 +22,7 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
     const [isPending, startTransition] = useTransition();
     const locale = useLocale();
     const router = useRouter();
-    const  pathname  = usePathname();
+    const pathname = usePathname();
 
     const onSelectChange = (e: any) => {
         const nextLocale = e.target.value;
@@ -45,13 +45,10 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
     const handleChangeTheme = () => {
         setTheme(prevTheme => prevTheme == "light" ? 'dark' : 'light')
     }
-    const isActive = (path:string) => {
-        // Verificar si el path actual corresponde a la página de inicio
+    const isActive = (path: string) => {
         if (path === '') {
-            // Debe activarse solo si pathname es exactamente '/' o '/locale' (página principal)
             return pathname === `/${locale}` || pathname === '/';
         }
-        // Para todas las otras páginas
         return pathname === `/${locale}/${path}`;
     };
     return (
@@ -59,11 +56,11 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
             <div>
                 Busta Graphic
             </div>
-            <div className="space-x-24">
-            {['', 'about', 'skills', 'project'].map((path) => (
-                    <Link 
+            <div className="flex justify-between w-[35%]">
+                {['', 'about', 'skills', 'projects'].map((path) => (
+                    <Link
                         key={path}
-                        href={`/${locale}/${path}`} 
+                        href={`/${locale}/${path}`}
                         locale={locale}
                         className={`tabname  hover:text-primary font-medium dark:text-gray ${isActive(path) ? 'text-primary' : 'text-whitegray'}`}
                     >
@@ -73,12 +70,12 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
             </div>
 
             <div className="flex space-x-6 items-center">
-                <button onClick={handleChangeTheme} className="rounded-full h-12 w-12 bg-white flex justify-center items-center hover:shadow-lg dark:bg-darkgray group">
-                    {theme == 'dark' ? <MoonIcon className="text-primary w-4 h-4" /> : <SunIcon className="text-primary w-5 h-5" />}
+                <div className="relative  group flex space-x-6 ">
+                    <button onClick={handleChangeTheme} className="rounded-full h-12 w-12 bg-white flex justify-center items-center hover:shadow-lg dark:bg-darkgray group">
+                        {theme == 'dark' ? <MoonIcon className="text-primary w-4 h-4" /> : <SunIcon className="text-primary w-5 h-5" />}
 
-                </button>
-                <div className="relative inline-block group ">
-                    <select defaultValue={locale} onChange={onSelectChange} className="appearance-none outline-none rounded-full px-4 font-semibold w-16 h-12 bg-white flex justify-center items-center hover:shadow-lg dark:bg-darkgray dark:text-whitebg " onMouseEnter={() => setLenguageHover(true)} onMouseLeave={() => setLenguageHover(false)}>
+                    </button>
+                    <select defaultValue={locale} onChange={onSelectChange} className="appearance-none outline-none rounded-full pr-6 pl-3 font-semibold  h-12 bg-white flex justify-center items-center hover:shadow-lg dark:bg-darkgray dark:text-whitebg " onMouseEnter={() => setLenguageHover(true)} onMouseLeave={() => setLenguageHover(false)}>
                         <option value="en"> EN</option>
                         <option value="es">ES</option>
                     </select>

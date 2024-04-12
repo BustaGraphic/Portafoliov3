@@ -4,7 +4,7 @@
       "home":"Home",
       "skills":"Skills",
       "about":"About",
-      "project":"Project",
+      "projects":"Projects",
       "contactpage":"Contact"
     },
     "HeroSection": {
@@ -30,6 +30,6 @@
         "im":"I'm",
         "country":"Spain",
         "description":"Description",
-        "descriptiontext":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel libero elit. Aliquam ut tellus magna. Donec dignissim congue dui, quis tristique nulla fermentum eu. Duis condimentum luctus lectus, vitae varius quam tincidunt eget. Proin tincidunt arcu vel ligula feugiat, sit amet dapibus ligula condimentum. Quisque sed luctus odio, vitae rhoncus dui. Vivamus tempus fringilla arcu ac dapibus. Mauris porta sollicitudin massa, non lacinia massa venenatis et. Duis consectetur mauris non turpis finibus, et blandit sapien fringilla."
+        "descriptiontext":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel libero elit. Aliquam ut tellus magna. Donec dignissim congue dui, quis tristique nulla fermentum eu. Duis condimentum luctus lectus, vitae varius quam tincidunt eget. Proin tincidunt arcu vel ligula feugiat, sit amet dapibus ligula condimentum. Quisque sed luctus odio, vitae rhoncus dui. Vivamus tempus fringilla arcu ac dapibus. "
     }
     }
