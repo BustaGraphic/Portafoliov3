@@ -21,13 +21,13 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
     return (
 
         <div className=" grid lg:grid-rows-2 max-lg:grid-rows-2 gap-6 lg:h-full   ">
-            
-            <div className="grid 2xl:grid-cols-2 max-lg:grid-rows-4 lg:max-2xl:grid-rows-3 gap-6 md:bg-primary max-sm:bg-gray ">
-                <Link href={`/${locale}/about`} className="max-2xl:row-span-2 grid grid-cols-11 bg-white rounded-xl  p-6 hover:shadow-lg cursor-pointer dark:bg-darkgray" >
-                    <div className="bg-whitegray  rounded-lg  col-span-4 dark:bg-gray">
+
+            <div className="grid 2xl:grid-cols-2 max-lg:grid-rows-4 lg:max-2xl:grid-rows-3 gap-6 md:bg-primary  ">
+                <Link href={`/${locale}/about`} className="max-2xl:row-span-2 grid sm:grid-cols-11 bg-white rounded-xl  p-6 hover:shadow-lg cursor-pointer dark:bg-darkgray" >
+                    <div className="max-sm:hiddenbg-whitegray  rounded-lg  col-span-4 dark:bg-gray">
 
                     </div>
-                    <div className="flex-col flex justify-between col-span-7  group pl-6">
+                    <div className="flex-col flex justify-between col-span-7  group sm:pl-6">
                         <div className="  flex justify-end items-center text-whitegray space-x-1 dark:text-gray">
                             <div>
                                 {t('about')}
@@ -42,7 +42,7 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
 
                             </div>
                             <div className="text-5xl font-bold text-black dark:text-whitebg">
-                                Name                            </div>
+                                Developer                           </div>
                         </div>
                         <div className="  flex justify-end items-center text-whitegray space-x-1 dark:text-gray ">
                             <div>
@@ -84,13 +84,13 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
                             <div className="flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
                                 <FontAwesomeIcon icon={faSquareJs} />
                             </div>
-                            <div className="flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
+                            <div className="max-[480px]:hidden flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
                                 <FontAwesomeIcon icon={faReact} />
                             </div>
-                            <div className="flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
+                            <div className="max-[580px]:hidden flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
                                 <FontAwesomeIcon icon={faFigma} />
                             </div>
-                            <div className="flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
+                            <div className="max-sm:hidden flex justify-center items-center h-12 w-12 bg-whitebg  rounded-full ring-2 ring-white text-2xl text-primary dark:bg-black dark:ring-darkgray">
                                 <FontAwesomeIcon icon={faJava} />
                             </div>
                         </div>
@@ -214,22 +214,25 @@ const HeroSection: React.FC<HeroProps> = ({ }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="   bg-white rounded-lg cursor-pointer p-6  flex-col space-y-3 dark:bg-darkgray ">
+                    <div className="  bg-white rounded-lg cursor-pointer p-6 max-sm:grid max-sm:grid-cols-2 max-2xl:flex-col xl:space-y-3 dark:bg-darkgray ">
                         <div className="max-2xl:hidden  text-2xl font-bold text-black dark:text-whitebg">
                             {t('gettouch')}
                         </div>
-                        <div className="lg:max-2xl:flex-col flex justify-between lg:max-2xl:space-y-6 max-2xl:w-full ">
-                            <div className="flex items-center space-x-2 bg-whitebg dark:bg-black  py-3 px-5 rounded-full hover:shadow-lg text-black dark:text-whitebg ">
+                        <div className="min-[580px]:hidden flex items-center  text-2xl font-bold text-black dark:text-whitebg">
+                            Contact
+                        </div>
+                        <div className="lg:max-2xl:flex-col  flex max-[580px]:justify-end max-[580px]:space-x-6 justify-between lg:max-2xl:space-y-6  ">
+                            <div className="flex items-center  space-x-2 bg-whitebg dark:bg-black  h-12 px-5 rounded-full hover:shadow-lg text-black dark:text-whitebg ">
                                 <EnvelopeIcon className=" text-primary w-4 h-4 " />
-                                <div>
+                                <div className="max-[580px]:hidden">
                                     josuebustatr@gmail.com
                                 </div>
                             </div>
                             <div>
-                                <div className="flex items-center space-x-2 bg-whitebg dark:bg-black py-3 px-5 rounded-full hover:shadow-lg text-black dark:text-whitebg">
+                                <div className="flex items-center space-x-2 bg-whitebg dark:bg-black h-12  px-5 rounded-full hover:shadow-lg text-black dark:text-whitebg">
                                     <PhoneIcon className=" text-primary w-4 h-4 " />
-                                    <div>
-                                        +34 640030355
+                                    <div className="max-[580px]:hidden">
+                                        640030355
                                     </div>
                                 </div>
                             </div>

@@ -18,7 +18,7 @@ export default function Home() {
 
 
 
-    <div className="mx-auto w-screen px-24 sm:h-4/5 max-w-[120rem] pb-12 overflow-x-hidden max-sm:pt-12">
+    <div className="mx-auto w-screen md:px-24 px-12 sm:h-4/5 max-w-[120rem] pb-12 overflow-x-hidden max-sm:pt-12">
 
       <HeroSection />
 

@@ -61,7 +61,7 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
         return pathname === `/${locale}/${path}`;
     };
     return (
-        <div className="  flex justify-between items-center w-full max-w-[120rem] mx-auto px-12 text-black dark:text-whitebg">
+        <div className="  flex justify-between items-center w-full max-w-[120rem] mx-auto px-6 text-black dark:text-whitebg">
 
            
 
