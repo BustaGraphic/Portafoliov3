@@ -9,7 +9,7 @@ export default function Page() {
     const t = useTranslations('AboutSection');
 
     return (
-        <div className="mx-auto  px-24 h-4/5 max-w-[120rem] pb-12 ">
+        <div className="mx-auto  px-24 h-4/5 max-w-[120rem] pb-12  ">
 
             <div className=" grid grid-rows-2 gap-6 h-full ">
                 <div className="flex  space-x-6">

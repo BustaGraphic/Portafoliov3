@@ -7,24 +7,26 @@ import HeaderSection from "./Header"
 import AboutSection from "./about/page";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from 'next/navigation'
+import { ChatBubbleLeftEllipsisIcon } from '@heroicons/react/20/solid'
 
 export default function Home() {
 
 
 
-  
+
   return (
 
-   
+
+
+    <div className="mx-auto w-screen px-24 sm:h-4/5 max-w-[120rem] pb-12 overflow-x-hidden max-sm:pt-12">
+
+      <HeroSection />
+
+
       
-      <div className="mx-auto  px-24 h-4/5 max-w-[120rem] pb-12 ">
-        <HeroSection />
-          
-         
-       
 
-      </div>
+    </div>
 
-  
+
   );
 }

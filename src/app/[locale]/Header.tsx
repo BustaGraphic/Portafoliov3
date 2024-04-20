@@ -26,9 +26,7 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
 
     const onSelectChange = (e: any) => {
         const nextLocale = e.target.value;
-        // Consigue el path actual sin el locale
         const currentPath = window.location.pathname.split('/').slice(2).join('/');
-        // Cambia el locale en el URL sin cambiar la ruta actual
         window.location.href = `/${nextLocale}/${currentPath}`;
     };
     const [theme, setTheme] = useState('light')
@@ -43,8 +41,19 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
     }, [theme])
 
     const handleChangeTheme = () => {
-        setTheme(prevTheme => prevTheme == "light" ? 'dark' : 'light')
+        setTheme(prevTheme => {
+            const newTheme = prevTheme === "light" ? "dark" : "light";
+            localStorage.setItem("theme", newTheme);  
+            return newTheme;
+        });
     }
+    
+    useEffect(() => {
+        const storedTheme = localStorage.getItem("theme") || "light";
+        setTheme(storedTheme);
+        document.querySelector('html')?.classList.toggle('dark', storedTheme === "dark");
+    }, []);
+    
     const isActive = (path: string) => {
         if (path === '') {
             return pathname === `/${locale}` || pathname === '/';
@@ -52,17 +61,17 @@ const HeaderSection: React.FC<HeaderProps> = ({ }) => {
         return pathname === `/${locale}/${path}`;
     };
     return (
-        <div className=" flex justify-between items-center w-full max-w-[120rem] mx-auto px-24 text-black dark:text-whitebg">
+        <div className="  flex justify-between items-center w-full max-w-[120rem] mx-auto px-24 text-black dark:text-whitebg">
             <div>
                 Busta Graphic
             </div>
-            <div className="flex justify-between w-[35%]">
+            <div className="max-xl:hidden flex justify-between w-[35%]">
                 {['', 'about', 'skills', 'projects'].map((path) => (
                     <Link
                         key={path}
                         href={`/${locale}/${path}`}
                         locale={locale}
-                        className={`tabname  hover:text-primary font-medium dark:text-gray ${isActive(path) ? 'text-primary' : 'text-whitegray'}`}
+                        className={`tabname  hover:text-primary font-medium  ${isActive(path) ? 'text-primary' : 'text-whitegray dark:text-gray'}`}
                     >
                         {t(path || 'home')}
                     </Link>
